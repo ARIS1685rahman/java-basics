@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#heart-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.message {
+    font-family: 'Arial', sans-serif;
+    color: #d81b60;
+    z-index: 10;
+}
+
+.heart-pixel {
+    width: 15px;
+    height: 15px;
+    background-color: #ff4081;
+    position: absolute;
+    border-radius: 50%;
+    animation: popIn 0.5s ease-out forwards, fall 4s ease-in forwards 0.5s;
+}
+
+@keyframes popIn {
+    0% { transform: translateX(-50%) translateY(0) scale(0); }
+    to { transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@keyframes fall {
+    to {
+        transform: translateX(-50%) translateY(100vh);
+        opacity: 0;
+    }
+}
